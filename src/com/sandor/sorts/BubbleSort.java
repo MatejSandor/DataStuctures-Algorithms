@@ -13,8 +13,11 @@ public class BubbleSort {
             }
         }
 
-        for(int i = 0; i < intArray.length-1; i++) {
-            System.out.print(intArray[i] + ", ");
+        for(int i = 0; i < intArray.length; i++) {
+            System.out.print(intArray[i]);
+            if(i != intArray.length - 1) {
+                System.out.print(", ");
+            }
         }
 
     }
