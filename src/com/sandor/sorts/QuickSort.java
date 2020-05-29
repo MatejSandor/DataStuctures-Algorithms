@@ -37,6 +37,7 @@ public class QuickSort {
             }
         }
         pivot = input[j];
+        System.out.println(pivot);
         return j;
     }
 }
