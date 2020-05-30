@@ -25,4 +25,9 @@ public class LinkedListNode {
     public void setNext(LinkedListNode next) {
         this.next = next;
     }
+
+    @Override
+    public String toString() {
+        return employee.toString();
+    }
 }
