@@ -34,4 +34,9 @@ public class DoublyLinkedListNode {
     public void setPrevious(DoublyLinkedListNode previous) {
         this.previous = previous;
     }
+
+    @Override
+    public String toString() {
+        return employee.toString();
+    }
 }
