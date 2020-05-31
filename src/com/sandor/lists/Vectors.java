@@ -1,5 +1,7 @@
 package com.sandor.lists;
 
+import com.sandor.Employee;
+
 import java.util.List;
 import java.util.Vector;
 

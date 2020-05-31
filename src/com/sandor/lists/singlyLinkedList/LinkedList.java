@@ -1,6 +1,6 @@
 package com.sandor.lists.singlyLinkedList;
 
-import com.sandor.lists.Employee;
+import com.sandor.Employee;
 
 public class LinkedList {
     private LinkedListNode head;

@@ -1,6 +1,6 @@
 package com.sandor.lists.doublyLinkedList;
 
-import com.sandor.lists.Employee;
+import com.sandor.Employee;
 
 public class DoublyLinkedListNode {
     private Employee employee;

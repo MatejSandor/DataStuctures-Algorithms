@@ -1,4 +1,4 @@
-package com.sandor.lists;
+package com.sandor;
 
 public class Employee {
     private String firstName;
