@@ -21,14 +21,15 @@ public class ArrayQueue {
         return back-front == 0;
     }
 
-    public void enqueue(Employee employee) {
-        if(back == queue.length) {
+    private void enqueue(Employee employee) {
+        if(back == queue.length - 1) {
             Employee[] newArray = new Employee[2*queue.length];
             System.arraycopy(queue,0,newArray,0,queue.length);
             queue = newArray;
         }
 
         queue[back++] = employee;
+
     }
 
     public Employee dequeue() {
