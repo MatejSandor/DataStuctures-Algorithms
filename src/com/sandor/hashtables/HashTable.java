@@ -43,6 +43,17 @@ public class HashTable {
         return hashtable[hashedKey].employee;
     }
 
+    public Employee remove(String key) {
+        int hashedKey = findKey(key);
+        if(hashedKey == -1) {
+            return null;
+        }
+
+        Employee employee = hashtable[hashedKey].employee;
+        hashtable[hashedKey] = null;
+        return employee;
+    }
+
     private int findKey(String key) {
         int hashedKey = hashKey(key);
         if(hashtable[hashedKey] != null && hashtable[hashedKey].key.equals(key)) {
@@ -62,17 +73,22 @@ public class HashTable {
             hashedKey = (hashedKey+1) % hashtable.length;
         }
 
-        if(stopIndex == hashedKey) {
-            return -1;
-        } else {
+        if(hashtable[hashedKey] != null
+                && !hashtable[hashedKey].key.equals(key)) {
             return hashedKey;
+        } else {
+            return -1;
         }
 
     }
 
     public void printHashtable() {
         for (int i = 0; i<hashtable.length; i++) {
-            System.out.println(hashtable[i]);
+            if(hashtable[i] == null) {
+                System.out.println("empty");
+            } else {
+                System.out.println(hashtable[i].employee);
+            }
         }
     }
 
