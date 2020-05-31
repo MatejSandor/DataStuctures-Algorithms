@@ -21,4 +21,9 @@ public class HashTable {
             hashtable[hashedKey] = employee;
         }
     }
+
+    public Employee get(String key) {
+        int hashedKey = hashKey(key);
+        return hashtable[hashedKey];
+    }
 }
