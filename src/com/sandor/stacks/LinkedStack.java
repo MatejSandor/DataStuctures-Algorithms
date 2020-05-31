@@ -3,7 +3,6 @@ package com.sandor.stacks;
 import com.sandor.Employee;
 
 import java.util.LinkedList;
-import java.util.ListIterator;
 
 public class LinkedStack {
     private LinkedList<Employee> stack;
