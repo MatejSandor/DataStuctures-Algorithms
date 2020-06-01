@@ -53,7 +53,7 @@ public class HashTable {
         hashtable[hashedKey] = null;
 
         StoredData[] oldHashtable = hashtable;
-        
+
         hashtable = new StoredData[oldHashtable.length];
         for(int i = 0; i<oldHashtable.length; i++) {
             if(oldHashtable[i] != null) {
