@@ -32,4 +32,24 @@ public class TreeNode {
     public void setRightChild(TreeNode rightChild) {
         this.rightChild = rightChild;
     }
+
+    public void insert(int value) {
+        if(value == data) {
+            return;
+        }
+
+        if(value < data) {
+            if(leftChild == null) {
+                leftChild = new TreeNode(value);
+            } else {
+                leftChild.insert(value);
+            }
+        } if(value > data) {
+            if (rightChild == null) {
+                rightChild = new TreeNode(value);
+            } else {
+                rightChild.insert(value);
+            }
+        }
+    }
 }
