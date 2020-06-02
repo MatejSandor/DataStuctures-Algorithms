@@ -37,4 +37,32 @@ public class Tree {
         }
         return root.max();
     }
+
+    public void delete(int value) {
+        root = delete(root,value);
+    }
+
+    public TreeNode delete(TreeNode subtreeRoot, int value) {
+        if(subtreeRoot == null) {
+            return null;
+        }
+        if (value < subtreeRoot.getData()) {
+            subtreeRoot.setLeftChild(delete(subtreeRoot.getLeftChild(),value));
+        }
+        else if (value > subtreeRoot.getData()) {
+            subtreeRoot.setRightChild(delete(subtreeRoot.getRightChild(),value));
+        }
+
+        else {
+            if(subtreeRoot.getLeftChild() == null) {
+                return subtreeRoot.getRightChild();
+            } else if (subtreeRoot.getRightChild() == null) {
+                return subtreeRoot.getLeftChild();
+            }
+
+            subtreeRoot.setData(subtreeRoot.getRightChild().min());
+            subtreeRoot.setRightChild(delete(subtreeRoot.getRightChild(),subtreeRoot.getData()));
+        }
+        return subtreeRoot;
+    }
 }

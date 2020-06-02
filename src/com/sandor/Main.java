@@ -17,7 +17,18 @@ public class Main {
 
         intTree.inOrder();
         System.out.println();
-        System.out.println(intTree.get(27));
+//        System.out.println(intTree.get(27));
+//        System.out.println(intTree.max());
+//        System.out.println(intTree.min());
+        intTree.delete(15);
+        System.out.println();
+        intTree.inOrder();
+        intTree.delete(27);
+        System.out.println();
+        intTree.inOrder();
+        intTree.delete(25);
+        System.out.println();
+        intTree.inOrder();
     }
 
 }
