@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Vector;
 
 public class Vectors {
-    public static void main(String[] args) {
+    public static void vectorsMain() {
 
         List<Employee> employeeList = new Vector<>();
         employeeList.add(new Employee("Jane", "Jones", 123));

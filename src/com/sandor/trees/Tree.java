@@ -10,4 +10,10 @@ public class Tree {
             root.insert(value);
         }
     }
+
+    public void inOrder() {
+        if(root != null) {
+            root.inOrder();
+        }
+    }
 }

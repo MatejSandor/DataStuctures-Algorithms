@@ -52,4 +52,14 @@ public class TreeNode {
             }
         }
     }
+
+    public void inOrder() {
+        if(leftChild != null) {
+            leftChild.inOrder();
+        }
+        System.out.print(data + ", ");
+        if(rightChild != null) {
+            rightChild.inOrder();
+        }
+    }
 }

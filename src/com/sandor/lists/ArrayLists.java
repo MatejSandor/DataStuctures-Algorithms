@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ArrayLists {
-    public static void main(String[] args) {
+    public static void arrayListMain() {
 
         List<Employee> employeeList = new ArrayList<>();
         employeeList.add(new Employee("Jane", "Jones", 123));
