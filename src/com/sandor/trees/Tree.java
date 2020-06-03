@@ -4,7 +4,7 @@ public class Tree {
     private TreeNode root;
 
     public void insert(int value) {
-        if(root == null) {
+        if (root == null) {
             root = new TreeNode(value);
         } else {
             root.insert(value);
@@ -12,56 +12,53 @@ public class Tree {
     }
 
     public void inOrder() {
-        if(root != null) {
+        if (root != null) {
             root.inOrder();
         }
     }
 
     public TreeNode get(int value) {
-        if(root != null) {
+        if (root != null) {
             return root.get(value);
         }
         return null;
     }
 
     public int min() {
-        if(root == null) {
+        if (root == null) {
             return Integer.MIN_VALUE;
         }
         return root.min();
     }
 
     public int max() {
-        if(root == null) {
+        if (root == null) {
             return Integer.MAX_VALUE;
         }
         return root.max();
     }
 
     public void delete(int value) {
-        root = delete(root,value);
+        root = delete(root, value);
     }
 
     public TreeNode delete(TreeNode subtreeRoot, int value) {
-        if(subtreeRoot == null) {
+        if (subtreeRoot == null) {
             return null;
         }
         if (value < subtreeRoot.getData()) {
-            subtreeRoot.setLeftChild(delete(subtreeRoot.getLeftChild(),value));
-        }
-        else if (value > subtreeRoot.getData()) {
-            subtreeRoot.setRightChild(delete(subtreeRoot.getRightChild(),value));
-        }
-
-        else {
-            if(subtreeRoot.getLeftChild() == null) {
+            subtreeRoot.setLeftChild(delete(subtreeRoot.getLeftChild(), value));
+        } else if (value > subtreeRoot.getData()) {
+            subtreeRoot.setRightChild(delete(subtreeRoot.getRightChild(), value));
+        } else {
+            if (subtreeRoot.getLeftChild() == null) {
                 return subtreeRoot.getRightChild();
             } else if (subtreeRoot.getRightChild() == null) {
                 return subtreeRoot.getLeftChild();
             }
 
             subtreeRoot.setData(subtreeRoot.getRightChild().min());
-            subtreeRoot.setRightChild(delete(subtreeRoot.getRightChild(),subtreeRoot.getData()));
+            subtreeRoot.setRightChild(delete(subtreeRoot.getRightChild(), subtreeRoot.getData()));
         }
         return subtreeRoot;
     }

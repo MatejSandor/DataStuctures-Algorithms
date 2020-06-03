@@ -27,8 +27,7 @@ public class DoublyLinkedListMain {
 
         list.removeFromEnd();
         list.printList();
-        System.out.println(list.getSize());
-
+        System.out.println(list.getSize());/**/
 
 
     }

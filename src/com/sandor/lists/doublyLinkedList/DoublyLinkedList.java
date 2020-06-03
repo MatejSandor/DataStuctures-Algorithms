@@ -11,7 +11,7 @@ public class DoublyLinkedList {
         DoublyLinkedListNode node = new DoublyLinkedListNode(employee);
         node.setNext(head);
 
-        if(isEmpty()) {
+        if (isEmpty()) {
             tail = node;
         } else {
             head.setPrevious(node);
@@ -24,7 +24,7 @@ public class DoublyLinkedList {
     public void addToEnd(Employee employee) {
         DoublyLinkedListNode node = new DoublyLinkedListNode(employee);
 
-        if(isEmpty()) {
+        if (isEmpty()) {
             head = node;
         } else {
             tail.setNext(node);
@@ -50,7 +50,7 @@ public class DoublyLinkedList {
 
         DoublyLinkedListNode removedNode = head;
 
-        if(head.getNext() == null) {
+        if (head.getNext() == null) {
             tail = null;
         } else {
             head.getNext().setPrevious(null);
@@ -63,12 +63,12 @@ public class DoublyLinkedList {
     }
 
     public DoublyLinkedListNode removeFromEnd() {
-        if(isEmpty()) {
+        if (isEmpty()) {
             return null;
         }
         DoublyLinkedListNode removedNode = tail;
 
-        if(tail.getPrevious() == null) {
+        if (tail.getPrevious() == null) {
             head = null;
         } else {
             tail.getPrevious().setNext(null);

@@ -14,7 +14,7 @@ public class LinkedList {
     }
 
     public LinkedListNode removeFromFront() {
-        if(isEmpty()) {
+        if (isEmpty()) {
             return null;
         }
         LinkedListNode removedNode = head;
@@ -36,7 +36,7 @@ public class LinkedList {
         LinkedListNode current = head;
         System.out.print("Head -> ");
 
-        while(current != null) {
+        while (current != null) {
             System.out.print(current);
             System.out.print(" -> ");
             current = current.getNext();

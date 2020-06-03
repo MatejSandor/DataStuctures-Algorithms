@@ -14,17 +14,17 @@ public class ArrayQueue {
     }
 
     public int getSize() {
-        return back-front;
+        return back - front;
     }
 
     public boolean isEmpty() {
-        return back-front == 0;
+        return back - front == 0;
     }
 
     private void enqueue(Employee employee) {
-        if(back == queue.length - 1) {
-            Employee[] newArray = new Employee[2*queue.length];
-            System.arraycopy(queue,0,newArray,0,queue.length);
+        if (back == queue.length - 1) {
+            Employee[] newArray = new Employee[2 * queue.length];
+            System.arraycopy(queue, 0, newArray, 0, queue.length);
             queue = newArray;
         }
 
@@ -33,14 +33,14 @@ public class ArrayQueue {
     }
 
     public Employee dequeue() {
-        if(isEmpty()) {
+        if (isEmpty()) {
             throw new NoSuchElementException();
         }
 
         Employee employee = queue[front];
         queue[front++] = null;
 
-        if(getSize() == 0) {
+        if (getSize() == 0) {
             front = 0;
             back = 0;
         }
@@ -49,14 +49,14 @@ public class ArrayQueue {
     }
 
     public Employee peek() {
-        if(isEmpty()) {
+        if (isEmpty()) {
             throw new NoSuchElementException();
         }
         return queue[front];
     }
 
     public void printQueue() {
-        for(int i = front; i < back; i++) {
+        for (int i = front; i < back; i++) {
             System.out.println(queue[i]);
         }
     }

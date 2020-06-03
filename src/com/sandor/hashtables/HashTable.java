@@ -15,29 +15,29 @@ public class HashTable {
 
     public void put(String key, Employee employee) {
         int hashedKey = hashKey(key);
-        if(occupied(hashedKey)) {
+        if (occupied(hashedKey)) {
             int stopIndex = hashedKey;
-            if(hashedKey == hashtable.length - 1) {
+            if (hashedKey == hashtable.length - 1) {
                 hashedKey = 0;
             } else {
                 hashedKey++;
             }
 
             while (occupied(hashedKey) && hashedKey != stopIndex) {
-                hashedKey = (hashedKey+1) % hashtable.length;
+                hashedKey = (hashedKey + 1) % hashtable.length;
             }
         }
 
-        if(occupied(hashedKey)) {
+        if (occupied(hashedKey)) {
             System.out.println("Sorry, the position is already occupied. :(");
         } else {
-            hashtable[hashedKey] = new StoredData(key,employee);
+            hashtable[hashedKey] = new StoredData(key, employee);
         }
     }
 
     public Employee get(String key) {
         int hashedKey = hashKey(key);
-        if(hashedKey == -1) {
+        if (hashedKey == -1) {
             return null;
         }
         return hashtable[hashedKey].employee;
@@ -45,7 +45,7 @@ public class HashTable {
 
     public Employee remove(String key) {
         int hashedKey = findKey(key);
-        if(hashedKey == -1) {
+        if (hashedKey == -1) {
             return null;
         }
 
@@ -55,8 +55,8 @@ public class HashTable {
         StoredData[] oldHashtable = hashtable;
 
         hashtable = new StoredData[oldHashtable.length];
-        for(int i = 0; i<oldHashtable.length; i++) {
-            if(oldHashtable[i] != null) {
+        for (int i = 0; i < oldHashtable.length; i++) {
+            if (oldHashtable[i] != null) {
                 put(oldHashtable[i].key, oldHashtable[i].employee);
             }
         }
@@ -67,12 +67,12 @@ public class HashTable {
 
     private int findKey(String key) {
         int hashedKey = hashKey(key);
-        if(hashtable[hashedKey] != null && hashtable[hashedKey].key.equals(key)) {
+        if (hashtable[hashedKey] != null && hashtable[hashedKey].key.equals(key)) {
             return hashedKey;
         }
 
         int stopIndex = hashedKey;
-        if(hashedKey == hashtable.length - 1) {
+        if (hashedKey == hashtable.length - 1) {
             hashedKey = 0;
         } else {
             hashedKey++;
@@ -81,10 +81,10 @@ public class HashTable {
         while (hashedKey != stopIndex
                 && hashtable[hashedKey] != null
                 && !hashtable[hashedKey].key.equals(key)) {
-            hashedKey = (hashedKey+1) % hashtable.length;
+            hashedKey = (hashedKey + 1) % hashtable.length;
         }
 
-        if(hashtable[hashedKey] != null
+        if (hashtable[hashedKey] != null
                 && !hashtable[hashedKey].key.equals(key)) {
             return hashedKey;
         } else {
@@ -94,8 +94,8 @@ public class HashTable {
     }
 
     public void printHashtable() {
-        for (int i = 0; i<hashtable.length; i++) {
-            if(hashtable[i] == null) {
+        for (int i = 0; i < hashtable.length; i++) {
+            if (hashtable[i] == null) {
                 System.out.println("empty");
             } else {
                 System.out.println(hashtable[i].employee);

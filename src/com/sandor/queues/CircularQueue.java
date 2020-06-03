@@ -14,23 +14,23 @@ public class CircularQueue {
     }
 
     public int getSize() {
-        if(back >= front) {
-            return back-front;
+        if (back >= front) {
+            return back - front;
         } else {
-            return back-front+queue.length;
+            return back - front + queue.length;
         }
     }
 
     public boolean isEmpty() {
-        return back-front == 0;
+        return back - front == 0;
     }
 
     public void enqueue(Employee employee) {
-        if(getSize() == queue.length - 1) {
+        if (getSize() == queue.length - 1) {
             int numItems = getSize();
-            Employee[] newArray = new Employee[2*queue.length];
-            System.arraycopy(queue,front,newArray,0,queue.length-front);
-            System.arraycopy(queue,0,newArray,queue.length-front,back);
+            Employee[] newArray = new Employee[2 * queue.length];
+            System.arraycopy(queue, front, newArray, 0, queue.length - front);
+            System.arraycopy(queue, 0, newArray, queue.length - front, back);
             queue = newArray;
 
             front = 0;
@@ -39,7 +39,7 @@ public class CircularQueue {
 
         queue[back] = employee;
 
-        if(back < queue.length - 1) {
+        if (back < queue.length - 1) {
             back++;
         } else {
             back = 0;
@@ -48,7 +48,7 @@ public class CircularQueue {
     }
 
     public Employee dequeue() {
-        if(isEmpty()) {
+        if (isEmpty()) {
             System.out.println("");
             throw new NoSuchElementException();
         }
@@ -56,10 +56,10 @@ public class CircularQueue {
         Employee employee = queue[front];
         queue[front++] = null;
 
-        if(getSize() == 0) {
+        if (getSize() == 0) {
             front = 0;
             back = 0;
-        } else if(front == queue.length) {
+        } else if (front == queue.length) {
             front = 0;
         }
 
@@ -67,22 +67,22 @@ public class CircularQueue {
     }
 
     public Employee peek() {
-        if(isEmpty()) {
+        if (isEmpty()) {
             throw new NoSuchElementException();
         }
         return queue[front];
     }
 
     public void printQueue() {
-        if(back >= front) {
+        if (back >= front) {
             for (int i = front; i < back; i++) {
                 System.out.println(queue[i]);
             }
         } else {
-            for(int i = front; i < queue.length; i++) {
+            for (int i = front; i < queue.length; i++) {
                 System.out.println(queue[i]);
             }
-            for(int j = 0; j < back; j++) {
+            for (int j = 0; j < back; j++) {
                 System.out.println(queue[j]);
             }
         }

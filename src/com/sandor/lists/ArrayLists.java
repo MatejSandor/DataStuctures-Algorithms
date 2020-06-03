@@ -29,7 +29,7 @@ public class ArrayLists {
         employeeList.forEach(System.out::println);
 
         Employee[] employeeArray = employeeList.toArray(new Employee[employeeList.size()]);
-        for (Employee employee: employeeArray) {
+        for (Employee employee : employeeArray) {
             System.out.println(employee);
         }
 

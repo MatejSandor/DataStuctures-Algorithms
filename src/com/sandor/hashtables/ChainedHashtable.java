@@ -21,7 +21,7 @@ public class ChainedHashtable {
 
     public void put(String key, Employee employee) {
         int hashedKey = hashKey(key);
-        hashtable[hashedKey].add(new StoredData(key,employee));
+        hashtable[hashedKey].add(new StoredData(key, employee));
     }
 
     public Employee get(String key) {
@@ -30,7 +30,7 @@ public class ChainedHashtable {
         StoredData employee = null;
         while (iterator.hasNext()) {
             employee = iterator.next();
-            if(employee.key.equals(key)) {
+            if (employee.key.equals(key)) {
                 return employee.employee;
             }
         }
@@ -47,7 +47,7 @@ public class ChainedHashtable {
         while (iterator.hasNext()) {
             employee = iterator.next();
             index++;
-            if(employee.key.equals(key)) {
+            if (employee.key.equals(key)) {
                 break;
             }
         }
@@ -61,8 +61,8 @@ public class ChainedHashtable {
     }
 
     public void printHashtable() {
-        for(int i=0; i<hashtable.length; i++) {
-            if(hashtable[i].isEmpty()) {
+        for (int i = 0; i < hashtable.length; i++) {
+            if (hashtable[i].isEmpty()) {
                 System.out.println("Position" + i + ": empty");
             } else {
                 System.out.println("Position" + i + ": empty");

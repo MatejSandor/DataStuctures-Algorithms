@@ -13,9 +13,9 @@ public class ArrayStack {
     }
 
     public void push(Employee employee) {
-        if(top == stack.length) {
+        if (top == stack.length) {
             Employee[] newArray = new Employee[2 * (stack.length)];
-            System.arraycopy(stack,0,newArray,0,stack.length);
+            System.arraycopy(stack, 0, newArray, 0, stack.length);
             stack = newArray;
         }
 
@@ -23,7 +23,7 @@ public class ArrayStack {
     }
 
     public Employee pop() {
-        if(isEmpty()) {
+        if (isEmpty()) {
             throw new EmptyStackException();
         }
         Employee employee = stack[--top];
@@ -33,7 +33,7 @@ public class ArrayStack {
     }
 
     public Employee peek() {
-        if(isEmpty()) {
+        if (isEmpty()) {
             throw new EmptyStackException();
         }
 
@@ -49,7 +49,7 @@ public class ArrayStack {
     }
 
     public void printStack() {
-        for(int i = top-1; i >= 0; i--) {
+        for (int i = top - 1; i >= 0; i--) {
             System.out.println(stack[i]);
         }
     }
