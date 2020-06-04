@@ -73,6 +73,12 @@ public class Heap {
         return deletedValue;
     }
 
+    public int peek() {
+        if (isEmpty()) {
+            throw new IndexOutOfBoundsException("Heap is empty");
+        } else return heap[0];
+    }
+
     public boolean isFull() {
         return size == heap.length;
     }
