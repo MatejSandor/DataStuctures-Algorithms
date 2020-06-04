@@ -3,16 +3,11 @@ package com.sandor;
 import java.io.*;
 import java.util.*;
 
-// This class represents a directed graph using adjacency list
-// representation
-class Graphs
-{
+class Graphs {
     private int V;   // No. of vertices
     private LinkedList<Integer> adj[]; //Adjacency Lists
 
-    // Constructor
-    Graphs(int v)
-    {
+    Graphs(int v) {
         V = v;
         adj = new LinkedList[v];
         for (int i=0; i<v; ++i)
@@ -43,9 +38,6 @@ class Graphs
             s = queue.poll();
             System.out.print(s + " ");
 
-            // Get all adjacent vertices of the dequeued vertex s
-            // If a adjacent has not been visited, then mark it
-            // visited and enqueue it
             Iterator<Integer> i = adj[s].listIterator();
             while (i.hasNext()) {
                 int n = i.next();
