@@ -27,11 +27,23 @@ public class Heap {
         heap[index] = newValue;
     }
 
+    public int delete(int value) {
+        return 0;
+    }
+
     public boolean isFull() {
         return size == heap.length;
     }
 
     public int getParent(int index) {
         return (index-1)/2;
+    }
+
+    public boolean isEmpty() { return size == 0;}
+
+    public int getChild(int index,boolean left) {
+        if (left) {
+            return (2*index)+1;
+        } else return (2*index)+2;
     }
 }
