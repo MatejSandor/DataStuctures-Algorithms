@@ -27,7 +27,45 @@ public class Heap {
         heap[index] = newValue;
     }
 
-    public int delete(int value) {
+    private void fixHeapBelow(int index, int lastHeapIndex) {
+        int childToSwap;
+        int newValue = heap[index];
+        while(index<= lastHeapIndex) {
+            int leftChild = getChild(index,true);
+            int rightChild = getChild(index,false);
+            if(leftChild <= lastHeapIndex) {
+                if (rightChild > lastHeapIndex) {
+                    childToSwap = leftChild;
+                } else {
+                    childToSwap = (heap[leftChild] > heap[rightChild] ? leftChild : rightChild);
+                }
+
+                if(heap[index]<heap[childToSwap]) {
+                    int tmp = heap[index];
+                    heap[index] = heap[childToSwap];
+                    heap[childToSwap] = tmp;
+                }
+                else {
+                    break;
+                }
+                index = childToSwap;
+            }
+            else {
+                break;
+            }
+        }
+    }
+
+    public int delete(int index) {
+        if(isEmpty()) {
+            throw new IndexOutOfBoundsException("Heap is empty");
+        }
+        int parent = getParent(index);
+        int deletedValue = heap[index];
+        heap[index] = heap[size-1];
+        if(heap[index] > parent) {
+            fixHeapUp(index);
+        }
         return 0;
     }
 
