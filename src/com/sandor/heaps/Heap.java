@@ -63,10 +63,14 @@ public class Heap {
         int parent = getParent(index);
         int deletedValue = heap[index];
         heap[index] = heap[size-1];
-        if(heap[index] > parent) {
+        if(index == 0 || heap[index] < heap[parent]) {
+            fixHeapBelow(index,size-1);
+        } else {
             fixHeapUp(index);
         }
-        return 0;
+
+        size--;
+        return deletedValue;
     }
 
     public boolean isFull() {
