@@ -79,6 +79,16 @@ public class Heap {
         } else return heap[0];
     }
 
+    public void sort() {
+        int lastHeapIndex = size-1;
+        for(int i=0; i<lastHeapIndex;i++) {
+            int tmp = heap[0];
+            heap[0] = heap[lastHeapIndex-i];
+            heap[lastHeapIndex-i] = tmp;
+            fixHeapBelow(0, lastHeapIndex-i-1);
+        }
+    }
+
     public boolean isFull() {
         return size == heap.length;
     }
